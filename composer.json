@@ -1,0 +1,24 @@
+{
+    "name": "williams/command-center-php-lib",
+    "description": "PHP Library for accessing CommandCenter",
+    "type": "library",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "John Halterman",
+            "email": "johnh@williams-trading.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "CommandCenter\\": "library/"
+        }
+    },
+    "include-path": [
+        "library/"
+    ],
+}
