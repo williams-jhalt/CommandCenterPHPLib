@@ -2,10 +2,13 @@
 
 namespace CommandCenter;
 
-class Promotion extends AbstractModel implements JsonRestResponseInterface {
+class WebBanner extends AbstractModel implements JsonRestResponseInterface {
 
     const SHOWN_ON_MUFFS = 1;
     const SHOWN_ON_WILLIAMS = 2;
+    const IMAGE_TYPE_BOX_140X140 = 'box140x140';
+    const IMAGE_TYPE_BANNER_600X201 = 'banner600x201';
+    const IMAGE_TYPE_SIDE_173X108 = 'side173x108';
 
     private $_id;
     private $_description;

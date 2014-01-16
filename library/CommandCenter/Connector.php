@@ -36,32 +36,33 @@ class Connector {
         }
         return $this->_ch;
     }
-    
-    public function findActivePromotions(PromotionRequestOptions $options = null) {       
-        
+
+    public function findWebBanners(WebBannerRequestOptions $options = null) {
+
         if ($options === null) {
-            $options = new PromotionRequestOptions();
-        } 
+            $options = new WebBannerRequestOptions();
+        }
 
         $ch = $this->_getCurlHandler();
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_URL, "{$this->_url}/marketing?{$options->toRequestString()}");
-
-        if (($response = curl_exec($ch)) === false) {
-            return null;
-        }
-
-        $data = @json_decode($response);
+        curl_setopt($ch, CURLOPT_URL, "{$this->_url}/web-banner?{$options->toRequestString()}");
 
         $result = array();
 
-        if (isset($data->itemNumbers)) {
-            $result = $data->itemNumbers;
+        if (($response = curl_exec($ch)) === false) {
+            return $result;
+        }
+
+        $data = json_decode($response);
+        
+        foreach ($data as $webBannerData) {
+            $webBanner = new WebBanner();
+            $webBanner->fromJsonResponse($webBannerData);
+            $result[] = $webBanner;
         }
 
         return $result;
-        
     }
 
 }
