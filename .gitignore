@@ -1,2 +1,4 @@
 /nbproject/private/
 /vendor/
+/composer.lock
+/test/config.ini
