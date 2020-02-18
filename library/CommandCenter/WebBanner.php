@@ -10,6 +10,7 @@ class WebBanner extends AbstractModel implements JsonRestResponseInterface {
     const IMAGE_TYPE_BANNER_600X201 = 'banner600x201';
     const IMAGE_TYPE_SIDE_173X108 = 'side173x108';
     const IMAGE_TYPE_SIDE_173X288 = 'side173x288';
+    const IMAGE_TYPE_BANNER_1899x548 = 'banner1899x548';
 
     private $_id;
     private $_description;
